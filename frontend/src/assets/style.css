@@ -1,0 +1,77 @@
+.adminPage {
+    display: flex;
+}
+
+.sidebar_admin {
+    width: 20%;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.contentPageAdmin {
+    width: 80%;
+    padding: 20px;
+}
+
+.navbar_admin {
+    background-color: #343a40;
+    color: white;
+    padding: 10px;
+}
+
+.borderContenuAdmin {
+    border: 1px solid #dee2e6;
+    padding: 20px;
+}
+
+.contenuAdmin {
+    margin: 20px 0;
+}
+
+.navbarPage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #343a40;
+    color: white;
+}
+
+.button.is-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.field {
+    margin-bottom: 15px;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.input, .file-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+.file-label {
+    cursor: pointer;
+}
+
+.image.is-128x128 {
+    width: 128px;
+    height: 128px;
+    overflow: hidden;
+}
+
+.image.is-128x128 img {
+    width: 100%;
+    height: auto;
+}
+
+.field.btn .button {
+    width: 100%;
+}
