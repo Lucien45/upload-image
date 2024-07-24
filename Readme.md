@@ -1,5 +1,14 @@
 # Upload image in Django Rest Framework and React js
 
+<!-- More detail -->
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+<!-- End More detail -->
+
 ## Steps for Running Project
 
 ### Requirements
