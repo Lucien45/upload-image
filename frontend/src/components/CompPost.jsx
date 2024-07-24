@@ -112,6 +112,7 @@ export const AddEditPost = () => {
 
     return (
         <div className=''>
+            <Link to={`/`}>Home</Link>
             <form onSubmit={actionButton}>
                 <div className='formulaire'>
                     <div className="field">

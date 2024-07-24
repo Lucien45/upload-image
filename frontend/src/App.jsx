@@ -95,6 +95,7 @@ import { useState, useEffect } from "react";
 import { ToastContainer } from "react-bootstrap";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import IndexRoutes from "./routes/IndexRoutes";
+import './assets/style.css'
 function App() {
   return (
     <BrowserRouter>
