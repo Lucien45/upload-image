@@ -1,0 +1,59 @@
+version: "3.8"
+services:
+  #Database service
+  postgres:
+    image: postgres:14
+    container_name: postgres14
+    volumes:
+      - postgres-storage:/var/lib/postgresql/data/pgdata
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: "${DB_NAME}"
+      POSTGRES_USER: "${DB_USER}"
+      POSTGRES_PASSWORD: "${DB_PASSWORD}"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+      TZ: UTC
+    env_file:
+      - ./.env
+
+  #Backend service
+  up-backend:
+    # image: upload_image/up-backend:latest
+    container_name: up-backend
+    build:
+      context: backend/
+    command: sh -c "python manage.py makemigrations &&
+                    python manage.py migrate &&
+                    python manage.py runserver 0.0.0.0:${FOB_PORT}"
+    ports:
+      - "${FOB_PORT_REDIRECT}:${FOB_PORT}"
+    restart: always
+    depends_on:
+      - postgres
+    volumes:
+      - ./backend/media:/app/upd/media  # Volume pour les fichiers media
+    env_file:
+      - ./.env
+
+  #Frontend service
+  up-frontend:
+    # image: upload_image/up-frontend:latest
+    container_name: up-frontend
+    build:
+      context: frontend/
+    ports:
+      - "${FOF_PORT_REDIRECT}:${FOF_PORT}"
+    restart: always
+    depends_on:
+      - up-backend
+    volumes:
+      - ./frontend/src/assets:/app/upd/src/assets  # Volume pour les assets du frontend
+    env_file:
+      - ./.env
+
+volumes:
+  postgres-storage:
+  media-storage:
+  assets-storage:

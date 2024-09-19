@@ -2,7 +2,7 @@ import Axios from "./Axios";
 
 // Service Posts
 let getAllPosts = () => {
-    return Axios.get(`/api/posts`)
+    return Axios.get(`/api/posts/`)
 }
 
 let createPost = (data) => {
